@@ -9,9 +9,7 @@ import matplotlib.pyplot as plt
 
 LOGGER = get_logger(__name__)
 if not firebase_admin._apps:
-    cred = credentials.Certificate(
-        r'C:\Users\Sachin\Desktop\expense-management\firestore-expense-management.json'
-    )
+    cred = credentials.Certificate(st.secrets["google_service_account"])
     firebase_admin.initialize_app(cred)
 
 st.set_page_config(
