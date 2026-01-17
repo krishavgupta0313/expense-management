@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 LOGGER = get_logger(__name__)
 if not firebase_admin._apps:
     cred = credentials.Certificate(
-        r'C:\Users\Sachin\Desktop\expense-management\expense-management.json'
+        r'C:\Users\Sachin\Desktop\expense-management\firestore-expense-management.json'
     )
     firebase_admin.initialize_app(cred)
 
