@@ -32,9 +32,10 @@ On create expense page:
 1. User inputs date & time, price, category, item purchased, remarks
 2.	Clicks Add Expense
 3. App stores data in Firestore:
-4. For details refer to this [file]() 
+4. For details refer to this [Create Expense page](pages/1_Create%20Expense.py) 
 5. The statement which stores data in database:
-```db.collection("expense-management").add({
+```
+db.collection("expense-management").add({
     "Date and time": Date_Time_of_Expense,
     "Price": Price,
     "Category": category,
@@ -46,26 +47,31 @@ On create expense page:
 
 
 ### Create .venv environment
+1. select the app folder
+2. select requirements.txt(containing all libraries to be installed, eg. streamlit, firebase_admin, matplotlib )
+3. create environment
+
 ### Running the App:
-1.	### Open in integrated terminal
-2.	### Navigate to project folder
-3.	### Run the app:
+1.	Open in integrated terminal
+2.	Navigate to project folder
+3.	Run the app:
 ```
-streamlit run app.py
+streamlit run expensemanagement.py
 ```
-4.	### Open your browser at:
+4.	Open your browser at:
    http://localhost:8501
 
 
 ## How expenses are displayed:
 
-### On See Your Expenses Here page:
-1. ### App retrieves all expenses from Firestore:
-### expensedetails = db.collection("expense-management").stream()
-2.	### Data is displayed in a table using st.data_editor
-3.	### Users can edit any cell
-4.	### Changes are saved back to Firestore:
-```db.collection("expense-management").document(row["_doc_id"]).update({
+On See Your Expenses Here page:
+1. App retrieves all expenses from Firestore:
+   expensedetails = db.collection("expense-management").stream()
+2. Data is displayed in a table using st.data_editor
+3. Users can edit any cell
+4. Changes are saved back to Firestore:
+```
+db.collection("expense-management").document(row["_doc_id"]).update({
     "Date and time": row["Date and time"],
     "Price": row["Price"],
     "Category": row["Category"],
@@ -76,14 +82,14 @@ streamlit run app.py
 
 ## How analysis works:
 
-### On Expense Analysis page:
-1.	### Retrieve all expenses from Firestore
-2.	### Create DataFrame for analysis
-3.	### Generate Pie Charts:
-### Money Spent per Category (sum of prices per category)
-### Number of Expenses per Category
-4.	### Generate Monthly Expense Summary Table:
-5.	### Group expenses by month
-6.	### Sum Price for each month
-7.	### Display table with month and total spent
+On Expense Analysis page:
+1. Retrieve all expenses from Firestore
+2. Create DataFrame for analysis
+3. Generate Pie Charts:
+ Money Spent per Category (sum of prices per category)
+ Number of Expenses per Category
+4. Generate Monthly Expense Summary Table:
+5. Group expenses by month
+6. Sum Price for each month
+7. Display table with month and total spent
 
