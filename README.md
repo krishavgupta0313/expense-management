@@ -51,7 +51,7 @@ db.collection("expense-management").add({
 2. select requirements.txt(containing all libraries to be installed, eg. streamlit, firebase_admin, matplotlib )
 3. create environment
 
-### How to add delta changes
+### How to add delta modules
 1. Add the new libraries to be installed in the requirements.txt
 2. Save the file
 3. Open the main python file in integrated terminal by right clicking on it and selecting the option of opening in integrated terminal
@@ -92,7 +92,7 @@ db.collection("expense-management").document(row["_doc_id"]).update({
 ```
 5. For details refer to this [See your expenses page](./pages/2_See%20your%20expenses%20here.py) 
 
-## How analysis works:
+## How analytics works:
 
 On Expense Analysis page:
 1. Retrieve all expenses from Firestore
