@@ -9,7 +9,8 @@ import matplotlib.pyplot as plt
 
 LOGGER = get_logger(__name__)
 if not firebase_admin._apps:
-    cred = credentials.Certificate(st.secrets["google_service_account"])
+    firebase_credential=dict(st.secrets["google_service_account"])
+    cred = credentials.Certificate(st.secrets["firebase_credential"])
     firebase_admin.initialize_app(cred)
 
 st.set_page_config(
